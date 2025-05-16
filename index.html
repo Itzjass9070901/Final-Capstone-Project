@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Moth Explorer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Moth Explorer</h1>
+    <div id="greeting"></div>
+    <button id="themeToggle">Toggle Theme</button>
+  </header>
+
+  <main>
+    <section class="search-section">
+      <input type="text" id="searchInput" placeholder="Search moths by name..." />
+      <button id="searchBtn">Search</button>
+      <button id="clearHistory">Clear History</button>
+      <div id="searchHistory" class="history-box"></div>
+    </section>
+
+    <section id="mothContainer" class="card-container">
+      <!-- Moth cards will be injected here -->
+    </section>
+
+    <!-- <div id="sessionMessage" class="session-message"></div> -->
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Moth Explorer | Built for Moth Moth Moth</p>
+  </footer>
+
+  <!-- Scripts (in this order) -->
+  <script src="MothData.js"></script>
+  <script src="greet.js"></script>
+  <script src="theme.js"></script>
+  <script src="render.js"></script>
+  <script src="timer.js"></script>
+  <script src="search.js"></script>
+
+  <script>
+    // Initial render on page load
+    displayMoths(mothData);
+    startTimer();
+  </script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --card-bg: #f5f5f5;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --border: #cccccc;
+  --btn-bg: #333;
+  --btn-text: #fff;
+}
+
+body.dark {
+  --bg: #121212;
+  --text: #e0e0e0;
+  --card-bg: #1e1e1e;
+  --card-shadow: rgba(255, 255, 255, 0.05);
+  --border: #444;
+  --btn-bg: #e0e0e0;
+  --btn-text: #121212;
+}
+
+header {
+  padding: 1rem;
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+header h1 {
+  font-size: 2rem;
+}
+
+
+#greeting {
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+#themeToggle {
+  padding: 0.5rem 1rem;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#themeToggle:hover {
+  opacity: 0.8;
+}
+
+
+main {
+  padding: 2rem 1rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+
+.search-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+#searchInput {
+  padding: 0.6rem 1rem;
+  width: 100%;
+  max-width: 400px;
+  font-size: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background-color: var(--card-bg);
+  color: var(--text);
+}
+
+#searchBtn {
+  padding: 10px 16px;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+}
+
+#searchBtn:hover {
+  /* background-color: var(--primary-dark, #388E3c); */
+  opacity: 0.8;
+}
+
+#clearHistory {
+  background: transparent;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  opacity: 0.7;
+}
+
+#clearHistory:hover {
+  opacity: 1;
+}
+
+.history-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.history-box button {
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  padding: 0.3rem 0.7rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.history-box button:hover {
+  opacity: 0.85;
+}
+
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px var(--card-shadow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+.card-content h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.card-content p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.card-content a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--btn-bg);
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.card-content a:hover {
+  text-decoration: none;
+}
+
+
+.session-message {
+  margin-top: 3rem;
+  padding: 1rem;
+  text-align: center;
+  background-color: var(--card-bg);
+  border: 1px dashed var(--border);
+  font-style: italic;
+  color: var(--text);
+  border-radius: 6px;
+}
+
+
+footer {
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text);
+  opacity: 0.6;
+  margin-top: 2rem;
+}
+
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  #searchInput {
+    max-width: 90%;
+  }
+
+  .card-content h2 {
+    font-size: 1rem;
+  }
+}
